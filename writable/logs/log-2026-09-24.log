@@ -1,0 +1,114 @@
+ERROR - 2026-09-24 14:13:13 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in D:\xampp\htdocs\Inventorirental\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 D:\xampp\htdocs\Inventorirental\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\xampp\htdocs\Inventorirental\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops...', Array, false)
+#4 D:\xampp\htdocs\Inventorirental\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\Inventorirental\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\xampp\htdocs\Inventorirental\app\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+#7 D:\xampp\htdocs\Inventorirental\app\Controllers\Home.php(17): App\Models\LaptopModel->search(NULL, NULL, NULL)
+#8 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#9 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\Inventorirental\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\xampp\htdocs\Inventorirental\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\xampp\htdocs\Inventorirental\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 D:\xampp\htdocs\Inventorirental\system\rewrite.php(44): require_once('D:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in D:\xampp\htdocs\Inventorirental\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\xampp\htdocs\Inventorirental\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops...', Array, false)
+#3 D:\xampp\htdocs\Inventorirental\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\xampp\htdocs\Inventorirental\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\xampp\htdocs\Inventorirental\app\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+#6 D:\xampp\htdocs\Inventorirental\app\Controllers\Home.php(17): App\Models\LaptopModel->search(NULL, NULL, NULL)
+#7 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#8 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\Inventorirental\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 D:\xampp\htdocs\Inventorirental\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\xampp\htdocs\Inventorirental\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\xampp\htdocs\Inventorirental\system\rewrite.php(44): require_once('D:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2026-09-24 14:13:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+ERROR - 2026-09-24 14:29:12 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in D:\xampp\htdocs\Inventorirental\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 D:\xampp\htdocs\Inventorirental\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\xampp\htdocs\Inventorirental\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops...', Array, false)
+#4 D:\xampp\htdocs\Inventorirental\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\Inventorirental\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\xampp\htdocs\Inventorirental\app\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+#7 D:\xampp\htdocs\Inventorirental\app\Controllers\Home.php(17): App\Models\LaptopModel->search(NULL, NULL, NULL)
+#8 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#9 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\Inventorirental\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 D:\xampp\htdocs\Inventorirental\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\xampp\htdocs\Inventorirental\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 D:\xampp\htdocs\Inventorirental\system\rewrite.php(44): require_once('D:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in D:\xampp\htdocs\Inventorirental\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\xampp\htdocs\Inventorirental\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\xampp\htdocs\Inventorirental\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops...', Array, false)
+#3 D:\xampp\htdocs\Inventorirental\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\xampp\htdocs\Inventorirental\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\xampp\htdocs\Inventorirental\app\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+#6 D:\xampp\htdocs\Inventorirental\app\Controllers\Home.php(17): App\Models\LaptopModel->search(NULL, NULL, NULL)
+#7 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#8 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\xampp\htdocs\Inventorirental\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\Inventorirental\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 D:\xampp\htdocs\Inventorirental\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\xampp\htdocs\Inventorirental\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\xampp\htdocs\Inventorirental\system\rewrite.php(44): require_once('D:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2026-09-24 14:29:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')

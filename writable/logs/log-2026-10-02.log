@@ -1,0 +1,226 @@
+ERROR - 2026-10-02 08:45:35 --> Table 'inventory_rental.laptops' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+CRITICAL - 2026-10-02 08:45:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'inventory_rental.laptops' doesn't exist in engine
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+CRITICAL - 2026-10-02 08:45:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'inventory_rental.laptops' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+CRITICAL - 2026-10-02 08:45:35 --> [Caused by] mysqli_sql_exception: Table 'inventory_rental.laptops' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+ERROR - 2026-10-02 08:53:10 --> Table 'inventory_rental.laptops' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+CRITICAL - 2026-10-02 08:53:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'inventory_rental.laptops' doesn't exist in engine
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+CRITICAL - 2026-10-02 08:53:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'inventory_rental.laptops' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
+CRITICAL - 2026-10-02 08:53:10 --> [Caused by] mysqli_sql_exception: Table 'inventory_rental.laptops' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = \'available\'
+ORDER BY `laptops`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `laptops`.*, `categories`.`name` as `category_name`
+FROM `laptops`
+JOIN `categories` ON `categories`.`id` = `laptops`.`category_id`
+WHERE `laptops`.`status` = :laptops.status:
+ORDER BY `laptops`.`id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\LaptopModel.php(100): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Home.php(17): App\Models\LaptopModel->search(null, null, null)
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp\\htdocs\\Inventorirental\\public\\index.php')
