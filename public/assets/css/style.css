@@ -62,6 +62,9 @@ body { background: var(--light-bg); }
 .badge-status-available { background: #dcfce7; color: #16a34a; }
 .badge-status-maintenance { background: #fef3c7; color: #d97706; }
 .badge-status-inactive { background: #fee2e2; color: #dc2626; }
+.badge-status-baik { background: #dcfce7; color: #16a34a; }
+.badge-status-rusak-ringan { background: #fef3c7; color: #d97706; }
+.badge-status-rusak-berat { background: #fee2e2; color: #dc2626; }
 
 .badge-status-baik { background: #dcfce7; color: #16a34a; }
 .badge-status-rusak_ringan { background: #fef3c7; color: #d97706; }

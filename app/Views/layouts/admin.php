@@ -31,9 +31,6 @@
             <li class="<?= $seg == 'transaksi' ? 'active' : '' ?>">
                 <a href="<?= base_url('admin/transaksi') ?>"><i class="fa-solid fa-file-invoice"></i> Penggunaan Barang</a>
             </li>
-            <li class="<?= $seg == 'pembayaran' ? 'active' : '' ?>">
-                <a href="<?= base_url('admin/pembayaran') ?>"><i class="fa-solid fa-money-check-dollar"></i> Pembayaran</a>
-            </li>
             <li class="<?= $seg == 'pengguna' ? 'active' : '' ?>">
                 <a href="<?= base_url('admin/pengguna') ?>"><i class="fa-solid fa-user-shield"></i> Akun Login</a>
             </li>

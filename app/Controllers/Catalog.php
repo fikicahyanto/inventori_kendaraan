@@ -2,17 +2,17 @@
 
 namespace App\Controllers;
 
-use App\Models\LaptopModel;
+use App\Models\KendaraanModel;
 use App\Models\CategoryModel;
 
 class Catalog extends BaseController
 {
-    protected LaptopModel $laptopModel;
+    protected KendaraanModel $kendaraanModel;
     protected CategoryModel $categoryModel;
 
     public function __construct()
     {
-        $this->laptopModel   = new LaptopModel();
+        $this->kendaraanModel = new KendaraanModel();
         $this->categoryModel = new CategoryModel();
     }
 
@@ -23,8 +23,8 @@ class Catalog extends BaseController
         $sort       = $this->request->getGet('sort');
 
         $data = [
-            'title'      => 'Katalog Laptop',
-            'laptops'    => $this->laptopModel->search($keyword, $categoryId, $sort),
+            'title'      => 'Katalog Kendaraan',
+            'kendaraans' => $this->kendaraanModel->search($keyword, $categoryId, null),
             'categories' => $this->categoryModel->findAll(),
             'keyword'    => $keyword,
             'categoryId' => $categoryId,
@@ -41,15 +41,15 @@ class Catalog extends BaseController
 
     public function detail(int $id)
     {
-        $laptop = $this->laptopModel->getWithCategory($id);
+        $kendaraan = $this->kendaraanModel->getWithCategory($id);
 
-        if (!$laptop) {
-            return redirect()->to('/katalog')->with('error', 'Laptop tidak ditemukan.');
+        if (!$kendaraan) {
+            return redirect()->to('/katalog')->with('error', 'Kendaraan tidak ditemukan.');
         }
 
         $data = [
-            'title'  => $laptop['name'],
-            'laptop' => $laptop,
+            'title' => $kendaraan['name'],
+            'kendaraan' => $kendaraan,
         ];
 
         return view('catalog/detail', $data);

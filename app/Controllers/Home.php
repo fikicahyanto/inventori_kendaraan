@@ -2,19 +2,19 @@
 
 namespace App\Controllers;
 
-use App\Models\LaptopModel;
+use App\Models\KendaraanModel;
 use App\Models\CategoryModel;
 
 class Home extends BaseController
 {
     public function index()
     {
-        $laptopModel   = new LaptopModel();
+        $kendaraanModel = new KendaraanModel();
         $categoryModel = new CategoryModel();
 
         $data = [
             'title'      => 'Beranda',
-            'featured'   => $laptopModel->search(null, null, null),
+            'featured'   => $kendaraanModel->search(null, null, null),
             'categories' => $categoryModel->findAll(),
         ];
 

@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="<?= base_url('/') ?>"><i class="fa-solid fa-laptop"></i> Inventori</a>
+        <a class="navbar-brand" href="<?= base_url('/') ?>"><i class="fa-solid fa-car"></i> Inventori Kendaraan</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,13 +22,6 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/') ?>">Beranda</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('katalog') ?>">Katalog</a></li>
                 <?php if (session()->get('logged_in')): ?>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url('rental-saya') ?>">Rental Saya</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="<?= base_url('cart') ?>">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span class="badge rounded-pill bg-danger cart-badge" id="cartCount">0</span>
-                        </a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                             <i class="fa-solid fa-circle-user"></i> <?= esc(session()->get('name')) ?>
@@ -78,8 +71,8 @@
 
 <footer class="footer-section mt-5">
     <div class="container py-4 text-center">
-        <p class="mb-1"><i class="fa-solid fa-laptop"></i> <strong>Inventori</strong></p>
-        <p class="small mb-0">&copy; <?= date('Y') ?> Inventori. Sewa laptop mudah, cepat, dan terpercaya.</p>
+        <p class="mb-1"><i class="fa-solid fa-car"></i> <strong>Inventori Kendaraan</strong></p>
+        <p class="small mb-0">&copy; <?= date('Y') ?> Sistem Inventori Kendaraan.</p>
     </div>
 </footer>
 

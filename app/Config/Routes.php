@@ -53,23 +53,15 @@ $routes->group('admin', ['filter' => 'admin', 'namespace' => 'App\Controllers\Ad
     $routes->get('kendaraan/cetak-barcode/(:num)', 'Kendaraans::printBarcode/$1');
 
     // Transaksi 
-    $routes->get('transaksi', 'Rentals::index');
-    $routes->get('transaksi/(:num)', 'Rentals::detail/$1');
-    $routes->post('transaksi/approve/(:num)', 'Rentals::approve/$1');
-    $routes->post('transaksi/reject/(:num)', 'Rentals::reject/$1');
-    $routes->post('transaksi/hapus/(:num)', 'Rentals::delete/$1');
-    $routes->post('transaksi/kembali/(:num)', 'Rentals::returned/$1');
+    $routes->get('transaksi', 'Penggunaan::index');
+    $routes->post('transaksi/hapus/(:num)', 'Penggunaan::delete/$1');
+    $routes->post('transaksi/kembali/(:num)', 'Penggunaan::returned/$1');
     $routes->post('transaksi/verifikasi-ktp-peminjam/(:num)', 'Rentals::verifyBorrowerKtp/$1');
     $routes->post('transaksi/tolak-ktp-peminjam/(:num)', 'Rentals::rejectBorrowerKtp/$1');
     $routes->post('transaksi/verifikasi-ktp-penerima/(:num)', 'Rentals::verifyRecipientKtp/$1');
     $routes->post('transaksi/tolak-ktp-penerima/(:num)', 'Rentals::rejectRecipientKtp/$1');
-    $routes->get('transaksi/tambah', 'Rentals::create');
-    $routes->post('transaksi/simpan', 'Rentals::simpan');
-
-    // Pembayaran
-    $routes->get('pembayaran', 'Payments::index');
-    $routes->post('pembayaran/verifikasi/(:num)', 'Payments::verify/$1');
-    $routes->post('pembayaran/tolak/(:num)', 'Payments::reject/$1');
+    $routes->get('transaksi/tambah', 'Penggunaan::create');
+    $routes->post('transaksi/simpan', 'Penggunaan::store');
 
     // Pengguna
     $routes->get('pengguna', 'Users::index');
